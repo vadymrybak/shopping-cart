@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url(assets/wallpaper-guitar.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    color: #fcf8e3;
+}
+
+.thumbnail {
+    opacity: 0.9;
+}

@@ -1,0 +1,7 @@
+.nav>li>a {
+    color: #fcf8e3;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    color: black;
+}

@@ -1,0 +1,19 @@
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="thumbnail">
+    <img class="img img-responsive" src="./assets/{{product.product_category}}/{{product.product_image}}" alt="{{ product.product_name }}_ALT">
+    
+    <div class="caption">
+      <h4 class="product_name">{{ product.product_name }}</h4>
+      <hr>
+      <h4><span class="label label-default">{{ product.product_price }}</span></h4>
+      <div class="stock">
+        <p class="in-stock" *ngIf="product.product_in_stock"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</p>
+        <p class="out-of-stock" *ngIf="!product.product_in_stock"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Out Of Stock</p>
+      </div>
+      <p>
+        <a class="btn btn-primary" role="button" [class.disabled]="!product.product_in_stock" (click)="addToCard()" appAddToCart="{{product.product_name}}">Add to cart</a>
+        <a routerLink="/details/{{product.id}}" href="" class="btn btn-info" role="button">Details</a>
+      </p>
+    </div>
+  </div>
+</div>

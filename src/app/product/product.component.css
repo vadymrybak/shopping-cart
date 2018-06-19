@@ -1,0 +1,19 @@
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    max-height: 63px;
+}
+
+h4.product_name {
+    min-height: 40px;
+}
+
+.btn {
+    width: 50%;
+}
+
+.out-of-stock {
+    color:red;
+}
+
+.in-stock {
+    color:green;
+}
