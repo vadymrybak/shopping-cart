@@ -10,12 +10,11 @@ export class AddToCartDirective {
   @Input() appAddToCart: string;
 
   @HostListener('click', ['$event']) onClick($event){
-    console.info('clicked: ' + this.appAddToCart);
     $.notify(`${this.appAddToCart} was added to your cart`, {"globalPosition":"bottom right", "className" : "success"});
   }
 
   constructor(el: ElementRef, renderer: Renderer) {
-    console.log("directive running");
+    //console.log("directive running");
     //renderer.setElementStyle(el.nativeElement, 'display', 'none');
    }
 

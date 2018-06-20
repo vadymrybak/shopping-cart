@@ -1,3 +1,78 @@
-<p>
-  shopping-cart works!
-</p>
+<div class="container-fluid">
+
+    <div class="jumbotron" *ngIf="cart.products.length === 0">
+      <h1>Empty cart!</h1>
+      <p>Currently your cart does not have any products in it.</p>
+    </div>
+    
+  <div class="row" *ngIf="cart.products.length !== 0">
+    
+    <div class="col-sm-9 summaryTable">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Picture</th>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of cart.products">
+                <td class="text-center">
+                  <img src="./assets/{{product.product_category}}/{{product.product_image}}" alt="{{product.product_name}}" class="img img-responsive">
+                </td>
+                <td>
+                    <a routerLink="/details/{{product.id}}" href="" class="btn btn-link" role="button">{{ product.product_name }}</a>
+                </td>
+                <td>{{ product.product_price }}</td>
+                <td class="text-center"><span class="badge">{{ product.quantity }}</span></td>
+                <td class="text-center"><button class="btn btn-link" (click)="deleteItem(product)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+    
+    <div class="col-sm-3 actions">
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">Order Summary</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-condensed">
+            <tbody>
+              <tr>
+                <td>Subtotal</td>
+                <td>{{ cart.sub_total | currency }}</td>
+              </tr>
+              <tr>
+                <td>GST/HST</td>
+                <td>{{ cart.gst_hst | currency }}</td>
+              </tr>
+              <tr>
+                <td>Shipping</td>
+                <td>{{ 20 | currency }}</td>
+              </tr>
+              <tr class="grand-total">
+                <td>Grand Total</td>
+                <td>{{ cart.grand_total | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-primary btn-block">Confirm Order</button>
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+  
+  
+
+</div>

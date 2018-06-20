@@ -1,0 +1,7 @@
+.panel-body {
+    color: black;
+}
+
+:host {
+ cursor: pointer;   
+}

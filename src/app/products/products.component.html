@@ -1,0 +1,35 @@
+
+<div *ngIf="router.url === '/products'">
+  
+  <div class="row">
+
+    <div class="col-xs-3">
+        <app-category-card category_name="Guitars" routerLink="/products/guitars"></app-category-card>
+    </div>
+
+    <div class="col-xs-3">
+        <app-category-card category_name="Pedals" routerLink="/products/pedals"></app-category-card>
+    </div>
+
+    <div class="col-xs-3">
+        <app-category-card category_name="Accessories" routerLink="/products/accessories"></app-category-card>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row" *ngIf="router.url !== '/products'">
+
+    <!-- SIDE MENU -->
+    <div class="col-md-2 col-lg-2">
+        <app-side-nav></app-side-nav>
+    </div>
+  
+    <!-- MAIN CONTENT -->
+    <div class="col-md-10 col-lg-10">
+       <router-outlet></router-outlet>
+    </div>
+  
+  </div>
+  

@@ -5,7 +5,7 @@
     <div class="caption">
       <h4 class="product_name">{{ product.product_name }}</h4>
       <hr>
-      <h4><span class="label label-default">{{ product.product_price }}</span></h4>
+      <h4><span class="label label-default">{{ product.product_price | currency }}</span></h4>
       <div class="stock">
         <p class="in-stock" *ngIf="product.product_in_stock"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</p>
         <p class="out-of-stock" *ngIf="!product.product_in_stock"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Out Of Stock</p>

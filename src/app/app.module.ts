@@ -18,6 +18,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductComponent } from './product/product.component';
 import { LoaderComponent } from './loader/loader.component';
 import { AddToCartDirective } from './add-to-cart.directive';
+import { ProductsComponent } from './products/products.component';
+import { CategoryCardComponent } from './category-card/category-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AddToCartDirective } from './add-to-cart.directive';
     ProductDetailsComponent,
     ProductComponent,
     LoaderComponent,
-    AddToCartDirective
+    AddToCartDirective,
+    ProductsComponent,
+    CategoryCardComponent
   ],
   imports: [
     BrowserModule,

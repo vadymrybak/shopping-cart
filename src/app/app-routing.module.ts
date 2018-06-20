@@ -6,6 +6,7 @@ import { GuitarsComponent } from './guitars/guitars.component';
 import { PedalsComponent } from './pedals/pedals.component';
 import { AccessoriesComponent } from './accessories/accessories.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
@@ -15,9 +16,13 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent,
+    component: HomeComponent
+  },
+  {
+    path: "products",
+    component: ProductsComponent,
     children: [
-        { path: '', pathMatch: 'full', redirectTo: 'guitars' },
+        //{ path: '', pathMatch: 'full', redirectTo: 'guitars' },
         { path: 'guitars', component: GuitarsComponent },
         { path: 'pedals', component: PedalsComponent },
         { path: 'accessories', component: AccessoriesComponent }

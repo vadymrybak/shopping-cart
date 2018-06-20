@@ -24,12 +24,14 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/jquery.fancybox.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/notify.min.js"
+              "src/assets/js/notify.min.js",
+              "src/assets/js/jquery.fancybox.min.js"
             ]
           },
           "configurations": {

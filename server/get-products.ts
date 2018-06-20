@@ -15,7 +15,7 @@ export function getAllProducts (req: Request, res: Response) {
                 payload :  PRODUCTS.filter(product => product.product_category === category)
             }
         );
-    }, 1500);
+    }, 200);
 
     
 

@@ -13,7 +13,7 @@ export class TopNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("top nav cart: ", this.cart);
+    //console.log("top nav cart: ", this.cart);
   }
 
 }

@@ -15,7 +15,7 @@ export function getProjectById (req: Request, res: Response) {
                 payload :  PRODUCTS.filter(product => product.id == id)[0]
             }
         );
-    }, 1500);
+    }, 200);
 
     
 

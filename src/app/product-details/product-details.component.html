@@ -1,11 +1,70 @@
-<div class="row">
+<app-loader *ngIf="loading"></app-loader>
 
-  <div class="col-md-4">
-    IMAGE
+<div class="container-fluid" *ngIf="product">
+
+  <div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+          <li><a routerLink="/home">Home</a></li>
+          <li><a routerLink="/products">Products</a></li>
+          <li><a routerLink="/products/{{product.product_category}}">{{product.product_category | uppercase}}</a></li>
+          <li class="active">{{product.product_name}}</li>
+        </ol>
+    </div>
   </div>
-  
-  <div class="col-md-8">
-    Control
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="well">
+          <a href="./assets/{{product.product_category}}/{{product.product_image}}" data-fancybox [attr.data-caption]="product.product_name">
+              <img src="./assets/{{product.product_category}}/{{product.product_image}}" alt="{{product.product_name}}" class="img img-responsive">
+          </a>
+        
+      </div>
+    </div>
+    
+    <div class="col-md-8">
+
+
+      <h2>{{ product.product_name }}</h2>
+      <small><i>Item # {{ product.product_id }}</i></small>
+
+      <div class="stock">
+        <p class="in-stock" *ngIf="product.product_in_stock"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> In Stock</p>
+        <p class="out-of-stock" *ngIf="!product.product_in_stock"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Out Of Stock</p>
+      </div>
+      
+      <h4><span class="label label-default">{{ product.product_price | currency }}</span></h4>
+      <div class="row">
+        <div class="col-xs-6">
+            Rating
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                <span class="sr-only">60% Complete (warning)</span>
+              </div>
+            </div>
+        </div>
+        <div class="col-xs-6">Reviews</div>
+      </div>
+      
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{product.product_description}}
+        </div>
+      </div>
+
+      <button class="btn btn-primary" [class.disabled]="!product.product_in_stock" (click)="addToCard()">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart
+      </button>
+      <button class="btn btn-warning">Add to Wish List</button>
+
+
+    </div>
+
+    
+
   </div>
 
 </div>
